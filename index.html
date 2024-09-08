@@ -321,54 +321,6 @@
 
     </script>
     <script src="./main.js" ></script>
-    <!-- <script src="./database.js" type="module"></script> -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js"
-        
-        const firebaseConfig = {
-          apiKey: "AIzaSyDkd5ZH0Kt9CT05Lp8cQ7DIEU9O8_SBq70",
-          authDomain: "amarnath-portfolio-404.firebaseapp.com",
-          databaseURL: "https://amarnath-portfolio-404-default-rtdb.firebaseio.com",
-          projectId: "amarnath-portfolio-404",
-          storageBucket: "amarnath-portfolio-404.appspot.com",
-          messagingSenderId: "1015038527505",
-          appId: "1:1015038527505:web:ff2536429154190a8d89b0",
-          measurementId: "G-108LP9DZ2L"
-        };
-      
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getDatabase(app);
-
-
-      const  userName = document.querySelector("#name")
-      const Email = document.querySelector("#email")
-      const Message = document.querySelector("#message")
-      const btn = document.querySelector("#btn")
-
-      btn.addEventListener("click", (evt)=>{
-        evt.preventDefault()
-        writeUserData()
-       // console.log(userName,Email,Message)
-        console.log(userName.value, Email.value, Message.value)
-      })
-
-      
-function writeUserData() {
-  set(ref(db, 'users/' + userName.value), {
-     name: userName.value,
-      email: Email.value,
-     message: Message.value
-    });
-
-    alert("Message sent to Author")
- }
-
-
- </script>
 </body>
 
 </html>
